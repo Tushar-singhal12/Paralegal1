@@ -130,7 +130,7 @@ from IPython.display import display
 from IPython.display import Markdown
 
 # Call the model and print the response.
-def prompt(model = model,prompt):
+def prompt(prompt,model = model):
   gemini = genai.GenerativeModel(model_name=model)
 
   response = gemini.generate_content("provide suitable legal action"+prompt,
@@ -140,6 +140,4 @@ def prompt(model = model,prompt):
   )
   display(Markdown(response.text))
 
-input = "what is law"
-prompt(model,input)
 
